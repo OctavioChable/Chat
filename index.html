@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tiembla Google Meet</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div id="pantalla-inicio">
+        <div class="modal">
+            <h2>Videollamada</h2>
+            <br>
+            <button id="btnCamara">&#128247;</button>
+            <button id="btnMicro">&#x1F3A4;</button>
+            <br>
+            <br>
+            <input type="text" id="inputNombre" placeholder="Tu nombre..." maxlength="15">
+            <br>
+            <button id="btnEntrar">Entrar a la Sala</button>
+        </div>
+    </div>
+
+    <div id="video-grid">
+        <div class="video-container" id="local-cont">
+            <video id="localVideo" autoplay muted playsinline></video>
+            <div class="etiqueta-nombre" id="tag-local">Tú</div>
+            <div class="controles-media">
+                <button id="btnMute" class="btn-circular">&#x1F3A4;</button>
+                <button id="btnCam" class="btn-circular">&#128247;</button>
+                <button id="btnSalir" class="btn-circular">&#128222;</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="chat-container">
+        <div id="mensajes"></div>
+        <div id="barra">
+            <div class="emoji-picker-container">
+                <button id="btnEmojiToggle" title="Emojis">&#x1F606;</button>
+                <div id="emoji-matrix" style="display: none;">
+                    <span>&#x1F606;</span><span>&#x1F923;</span><span>&#128557;</span><span>&#x1F620;</span><span>&#128077;</span>
+                    <span>&#128520;</span><span>&#128519;</span><span>&#128525;</span><span>&#128527;</span><span>&#128534;</span>
+                    <span>&#128545;</span><span>&#128561;</span><span>&#128564;</span><span>&#128565;</span><span>&#128567;</span>
+                    <span>&#128074;</span><span>&#128078;</span><span>&#129307;</span><span>&#129305;</span><span>&#128079;</span>
+                    <span>&#128178;</span><span>&#128269;</span><span>&#128295;</span><span>&#128161;</span><span>&#128369;</span>
+                </div>
+            </div>
+            <input type="text" id="entrada" placeholder="Escribe un mensaje...">
+            
+            <button id="btnEnviar">Enviar</button>
+        </div>
+    </div>
+    
+    <!-- Modal de salida -->
+    <div id="modalSalida" class="modalExit" style = "display: none">
+      <div class="modal-content">
+        <h2>Has salido de la sala</h2>
+        <p>Gracias por participar en la videollamada</p>
+      </div>
+    </div>
+
+    <script src="Cliente.js"></script>
+</body>
+</html>
