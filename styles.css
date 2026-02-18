@@ -1,0 +1,251 @@
+ 
+body { 
+    font-family: 'Segoe UI', sans-serif; 
+    background: #121212; 
+    color: white; 
+    margin: 0; 
+    display: flex; 
+    flex-direction: column; 
+    height: 100vh; 
+    overflow: hidden; 
+}
+
+.modalExit {
+  position: fixed;   /* Se pega a la ventana completa */
+  top: 0;
+  color: black;
+  left: 0;
+  width: 100%;
+  height: 100%;      /* Ocupa toda la altura */
+  background-color: rgba(0,0,0,0.5);
+  display: none;     /* Oculto por defecto */
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;     /* Encima de todo */
+}
+
+.modal-content {
+  color: black;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  min-width: 300px;
+}
+
+
+/* Pantalla de Inicio */
+#pantalla-inicio { 
+    position: fixed; 
+    top: 0; left: 0; 
+    width: 100%; height: 100%; 
+    background: rgba(0,0,0,0.9); 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    z-index: 1000; 
+}
+
+.modal { 
+    background: #fff; 
+    padding: 30px; 
+    border-radius: 15px; 
+    text-align: center; 
+    color: #333; 
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5); 
+}
+
+.modal input { 
+    padding: 12px; 
+    width: 250px; 
+    border-radius: 25px; 
+    border: 1px solid #ccc; 
+    margin-bottom: 15px; 
+    outline: none; 
+    font-size: 16px; 
+}
+
+.modal button { 
+    background: #075e54; 
+    color: white; 
+    border: none; 
+    padding: 10px 25px; 
+    border-radius: 25px; 
+    cursor: pointer; 
+    font-size: 16px; 
+    font-weight: bold; 
+}
+
+/* Cuadrícula de Video */
+#video-grid { 
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 15px; 
+    padding: 15px; 
+    justify-content: center; 
+    background: #000; 
+    min-height: 250px; 
+    border-bottom: 2px solid #333; 
+    overflow-y: auto; 
+}
+
+.video-container { 
+    position: relative; 
+    width: 300px; 
+    height: 225px; 
+    background: #222; 
+    border-radius: 10px; 
+    overflow: hidden; 
+    border: 2px solid #444; 
+}
+
+video { width: 100%; height: 100%; object-fit: cover; }
+#localVideo { transform: scaleX(-1); border-color: #4CAF50; }
+
+.etiqueta-nombre { 
+    position: absolute; 
+    bottom: 10px; 
+    left: 10px; 
+    background: rgba(0,0,0,0.6); 
+    color: white; 
+    padding: 2px 10px; 
+    border-radius: 5px; 
+    font-size: 13px; 
+    pointer-events: none; 
+}
+
+.controles-media { 
+    position: absolute; 
+    top: 10px; 
+    right: 10px; 
+    display: flex; 
+    gap: 8px; 
+}
+
+.btn-circular { 
+    width: 36px; 
+    height: 36px; 
+    border-radius: 50%; 
+    border: none; 
+    background: rgba(255,255,255,0.2); 
+    color: white; 
+    cursor: pointer; 
+    backdrop-filter: blur(5px); 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    font-size: 18px; 
+}
+
+.btn-circular:hover { 
+    background: rgba(255,255,255,0.4); 
+}
+.btn-off { 
+    background: #ff4444 !important; 
+}
+
+/* Chat */
+#chat-container { 
+    flex: 1; 
+    display: flex; 
+    flex-direction: column; 
+    background: #f0f2f5; 
+    color: #333; 
+    overflow: auto;
+}
+
+#mensajes { 
+    flex: 1; 
+    padding: 15px; 
+    overflow-y: auto; 
+    display: flex; 
+    flex-direction: column; 
+}
+
+.burbuja { 
+    max-width: 70%; 
+    padding: 8px 12px; 
+    margin: 4px; 
+    border-radius: 12px; 
+    font-size: 14px; 
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1); 
+}
+
+.nombre-chat { font-weight: bold; font-size: 11px; display: block; margin-bottom: 2px; color: #075e54; }
+.propio { align-self: flex-end; background: #dcf8c6; border-bottom-right-radius: 2px; }
+.ajeno { align-self: flex-start; background: #fff; border-bottom-left-radius: 2px; }
+
+/* Barra Inferior y Selector de Emojis */
+#barra { 
+    display: flex; 
+    padding: 10px; 
+    background: #fff; 
+    border-top: 1px solid #ccc; 
+    gap: 10px; 
+    align-items: center; 
+    position: relative; 
+}
+
+#entrada { 
+    flex: 1; 
+    padding: 12px 15px; 
+    border-radius: 25px; 
+    border: 1px solid #ccc; 
+    outline: none; 
+}
+
+#btnEnviar { 
+    background: #075e54; 
+    color: white; 
+    border: none; 
+    padding: 10px 25px; 
+    border-radius: 25px; 
+    cursor: pointer; 
+    font-weight: bold; 
+}
+
+.emoji-picker-container { position: relative; }
+
+#btnEmojiToggle { 
+    background: #eee; 
+    border: 1px solid #ccc; 
+    border-radius: 50%; 
+    width: 40px; 
+    height: 40px; 
+    cursor: pointer; 
+    font-size: 20px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+}
+
+#emoji-matrix {
+    display: none; 
+    position: absolute;
+    bottom: 55px;
+    left: 0;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    width: 220px;
+    max-height: 180px; 
+    overflow-y: auto;  
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    padding: 8px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    z-index: 100;
+}
+
+#emoji-matrix::-webkit-scrollbar { width: 6px; }
+#emoji-matrix::-webkit-scrollbar-thumb { background: #ccc; border-radius: 10px; }
+
+#emoji-matrix span {
+    cursor: pointer;
+    font-size: 22px;
+    padding: 5px;
+    text-align: center;
+    border-radius: 8px;
+    transition: background 0.2s;
+}
+
+#emoji-matrix span:hover { background: #f0f2f5; }
